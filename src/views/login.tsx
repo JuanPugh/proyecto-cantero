@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import Input from "../components/input";
+import Button from "../components/button";
 import { useNavigate, Link } from "react-router-dom";
 
 function Login() {
@@ -47,11 +48,7 @@ function Login() {
             <Input name="Email" onChange={handleChange} type="email"/>
             <Input name="Password" onChange={handleChange} type="password"/>
 
-
-
-            <button type="submit" className="submit rounded white-bg">
-            Iniciar sesion
-            </button>
+            <Button text="Iniciar sesion" type="submit" className="submit rounded white-bg"/>
 
             <div className="form-switch">
                 <p>No tienes una cuenta? </p>

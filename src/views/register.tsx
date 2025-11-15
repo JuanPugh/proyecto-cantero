@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import Input from "../components/input";
 import { useNavigate, Link } from "react-router-dom";
+import Button from "../components/button";
 
 function Register() {
 
@@ -52,9 +53,8 @@ function Register() {
                 <Input name="Email" onChange={handleChange} type="email"/>
                 <Input name="Password" onChange={handleChange} type="password"/>
 
-                <button type="submit" className="submit rounded white-bg">
-                Enviar datos!
-                </button>
+                <Button text="Registrar" type="submit" className="submit rounded white-bg"/>
+                
 
                 <div className="form-switch">
                     <p>Ya tienes una cuenta?</p>
