@@ -1,12 +1,13 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Input from "../components/input";
 import { useNavigate, Link } from "react-router-dom";
 import Button from "../components/button";
+import Navbar from "../components/navbar";
 
 function Register() {
 
-   // const days = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"];    
-   // const activities = ["Cocinar", "Despertar", "Entrenar", "Limpiar", "Darle de comer a los perros"];
+    // const days = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"];    
+    // const activities = ["Cocinar", "Despertar", "Entrenar", "Limpiar", "Darle de comer a los perros"];
 
     const navigate = useNavigate();
 
@@ -32,8 +33,8 @@ function Register() {
     const handleSubmit = (e: any) => {
         e.preventDefault();
 
-        if(values.name.trim() != "" && values.surname.trim() != "" && 
-        values.email.trim() != "" && values.password.trim() != "") {
+        if (values.name.trim() != "" && values.surname.trim() != "" &&
+            values.email.trim() != "" && values.password.trim() != "") {
 
             console.log("Datos enviados: ", values);
             navigate("/");
@@ -44,17 +45,21 @@ function Register() {
 
     return (
 
+
+        <>
+            <Navbar />
+
             <form onSubmit={handleSubmit} className="flex-vertical">
 
                 <h1 className="title">Register</h1>
 
-                <Input name="Name" onChange={handleChange} type="text"/>
-                <Input name="Surname" onChange={handleChange} type="text"/>
-                <Input name="Email" onChange={handleChange} type="email"/>
-                <Input name="Password" onChange={handleChange} type="password"/>
+                <Input name="Name" onChange={handleChange} type="text" />
+                <Input name="Surname" onChange={handleChange} type="text" />
+                <Input name="Email" onChange={handleChange} type="email" />
+                <Input name="Password" onChange={handleChange} type="password" />
 
-                <Button text="Registrar" type="submit" className="submit rounded white-bg"/>
-                
+                <Button text="Registrar" type="submit" className="submit rounded white-bg" />
+
 
                 <div className="form-switch">
                     <p>Ya tienes una cuenta?</p>
@@ -63,7 +68,7 @@ function Register() {
 
 
             </form>
+        </>
     )
 
 } export default Register;
- 

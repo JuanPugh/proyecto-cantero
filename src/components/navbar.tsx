@@ -10,6 +10,8 @@ export default function Navbar() {
             <h1>FERRETERIA PIU</h1>
 
             <div>
+                <Button text="Inicio" className="rounded white-bg" onClick={() => navigate("/")} />
+                <Button text="Productos" className="rounded white-bg" onClick={() => navigate("/products")} />
                 <Button text="Iniciar sesion" className="rounded white-bg" onClick={() => navigate("/login")} />
                 <Button text="Registrarse" className="rounded white-bg" onClick={() => navigate("/register")} />
             </div>

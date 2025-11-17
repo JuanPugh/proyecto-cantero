@@ -4,6 +4,7 @@ import './App.css';
 import Register from './views/register';
 import Login from './views/login';
 import Home from './views/home';
+import Products from './views/products';
 
 function App() {
 
@@ -11,9 +12,12 @@ function App() {
 
     <Router>
       <Routes>
-        <Route path="/"  element={ <Home/>}/>
-        <Route path="/register" element={ <Register/>}/>
-        <Route path="/login" element={ <Login/> }/>
+        <Route path="/" element={<Home />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/products" element={<Products />} />
+
+
       </Routes>
     </Router>
 

@@ -1,9 +1,13 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Input from "../components/input";
 import Button from "../components/button";
 import { useNavigate, Link } from "react-router-dom";
+import Navbar from "../components/navbar";
 
 function Login() {
+
+
+
 
     const [values, setValues] = useState({
 
@@ -28,10 +32,10 @@ function Login() {
     const handleSubmit = (e: any) => {
         e.preventDefault();
 
-        if(values.email.trim() != "" && values.password.trim() != "") {
+        if (values.email.trim() != "" && values.password.trim() != "") {
 
             console.log("Datos enviados: ", values);
-            navigate("/", { state: {values}});
+            navigate("/", { state: { values } });
         } else {
             alert("Debe ingresar datos en todos los campos");
         }
@@ -41,23 +45,30 @@ function Login() {
 
 
     return (
-        <form onSubmit={handleSubmit} className="flex-vertical">
+        <>
 
-            <h1 className="title">Log in</h1>
+            <Navbar />
 
-            <Input name="Email" onChange={handleChange} type="email"/>
-            <Input name="Password" onChange={handleChange} type="password"/>
 
-            <Button text="Iniciar sesion" type="submit" className="submit rounded white-bg"/>
 
-            <div className="form-switch">
-                <p>No tienes una cuenta? </p>
-                <Link to="/register">Crea una!</Link>
-            </div>
-            
+            <form onSubmit={handleSubmit} className="flex-vertical">
 
-        </form>
+                <h1 className="title">Log in</h1>
+
+                <Input name="Email" onChange={handleChange} type="email" />
+                <Input name="Password" onChange={handleChange} type="password" />
+
+                <Button text="Iniciar sesion" type="submit" className="submit rounded white-bg" />
+
+                <div className="form-switch">
+                    <p>No tienes una cuenta? </p>
+                    <Link to="/register">Crea una!</Link>
+                </div>
+
+
+            </form>
+        </>
+
     )
 
 } export default Login;
- 

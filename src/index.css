@@ -58,8 +58,3 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
-
-.vertical-flex {
-  display: flex;
-  flex-direction: column;
-}

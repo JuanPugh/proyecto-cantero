@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "name": "Martillo carpintero",
+        "price": 3500,
+        "material": "Acero y madera"
+    },
+    {
+        "id": 2,
+        "name": "Destornillador Philips",
+        "price": 1200,
+        "material": "Acero inoxidable"
+    },
+    {
+        "id": 3,
+        "name": "Llave inglesa ajustable",
+        "price": 4200,
+        "material": "Acero al carbono"
+    },
+    {
+        "id": 4,
+        "name": "Alicate universal",
+        "price": 2800,
+        "material": "Acero templado"
+    },
+    {
+        "id": 5,
+        "name": "Cinta métrica 5m",
+        "price": 1500,
+        "material": "Plástico y metal"
+    },
+    {
+        "id": 6,
+        "name": "Taladro percutor",
+        "price": 25000,
+        "material": "Plástico reforzado y acero"
+    },
+    {
+        "id": 7,
+        "name": "Caja de tornillos surtidos",
+        "price": 1800,
+        "material": "Acero galvanizado"
+    },
+    {
+        "id": 8,
+        "name": "Serrucho manual",
+        "price": 3200,
+        "material": "Acero y madera"
+    },
+    {
+        "id": 9,
+        "name": "Nivel de burbuja 30cm",
+        "price": 2200,
+        "material": "Aluminio"
+    },
+    {
+        "id": 10,
+        "name": "Pinza de punta fina",
+        "price": 2600,
+        "material": "Acero inoxidable"
+    }
+]

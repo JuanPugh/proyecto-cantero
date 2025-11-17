@@ -1,14 +1,16 @@
 #root {
-  min-width: 100vw;
+  width: 100%;
+  min-height: 100vh;
 }
 
 body {
-  background: linear-gradient(90deg, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
-  ;
+  background: #2E4057;
 }
 
 * {
   margin: 0;
+  color: white;
+
 }
 
 label {
@@ -24,7 +26,7 @@ label {
 
 .white-bg {
   background-color: #eee;
-  color: #222
+  color: #2E4057
 }
 
 .spaced {
@@ -63,56 +65,88 @@ label {
 }
 
 nav {
-  width: 100vw;
-  grid-area: hd;
+  max-width: 100%;
+  height: 10vh;
   display: flex;
-  position: fixed;
+  position: sticky;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
-  background-color: #222;
-
-
-  padding-right: 10vw;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #F0A433;
 }
 
 nav button {
-  margin: 0 10px 0 10px
+  margin-left: 15px;
 }
 
-nav div {
-  padding-right: 1vw;
-}
 
 nav h1 {
-  color: #efc;
+  color: white;
   vertical-align: middle;
   height: fit-content;
 }
 
+
 .main-body {
-  display: grid;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: 100%;
   min-height: 100vh;
-  grid-template-columns: auto;
-  grid-template-rows: auto auto 50px;
-  grid-template-areas: "hd" "cn" "ft";
 }
 
+
+
 .center {
-  grid-area: cn;
+  width: 100%;
   display: flex;
   justify-content: center;
+  /*border: 1px red solid; */
 }
 
 .footer {
-  grid-area: ft;
+
+  bottom: 0;
   display: flex;
   align-items: center;
   padding: 15px;
+  height: 5vh;
+  width: 90vw;
 }
 
 .submit {
   margin: 2vh auto;
   width: 250px;
 
+}
+
+.itemList {
+  display: flex;
+  width: 75vw;
+
+  padding-top: 20px;
+
+  flex-wrap: wrap;
+}
+
+.item {
+
+  width: 20vw;
+  height: 50vh;
+  background-color: white;
+  padding: 15px;
+  margin: 15px;
+  border-radius: 10px;
+}
+
+.item:hover {
+  transform: scale(110%);
+  transition: transform 0.25s cubic-bezier(.25, .8, .25, 1);
+}
+
+.item * {
+  color: black;
 }
