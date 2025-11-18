@@ -150,3 +150,14 @@ nav h1 {
 .item * {
   color: black;
 }
+
+.column {
+  width: 50vw;
+  background-color: wheat;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.column * {
+  color: black;
+}

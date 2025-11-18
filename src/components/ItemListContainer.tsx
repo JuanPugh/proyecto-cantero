@@ -1,28 +1,24 @@
 import { useEffect, useState } from "react";
-import data from "../data/products.json"
 import ItemList from "./ItemList";
+
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../firebase/config";
 
 const ItemListContainer = () => {
 
     const [products, setProducts] = useState<any[]>([]);
 
-    const fetchProducts = () => {
-
-        return new Promise<any[]>((resolve, reject) => {
-            resolve(data);
-        })
-
-    }
-
-
-
     useEffect(() => {
-        fetchProducts()
-            .then((res: any[]) => {
-                setProducts(res);
-                console.log(products);
+
+        const productsRef = collection(db, "products");
+        getDocs(productsRef)
+            .then((resp) => {
+
+                setProducts(resp.docs.map((doc) => {
+                    return { ...doc.data(), id: doc.id }
+                }));
             });
-    }, []);
+    });
 
 
     return (

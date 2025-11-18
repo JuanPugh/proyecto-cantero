@@ -3,60 +3,80 @@
         "id": 1,
         "name": "Martillo carpintero",
         "price": 3500,
-        "material": "Acero y madera"
+        "material": "Acero y madera",
+        "description": "El control y la potencia que necesitas. Convierte tus proyectos de madera más ambiciosos en una realidad sólida y duradera.",
+        "stock": 10
     },
     {
         "id": 2,
         "name": "Destornillador Philips",
         "price": 1200,
-        "material": "Acero inoxidable"
+        "material": "Acero inoxidable",
+        "description": "Precisión y agarre insuperables. Olvídate de los tornillos barridos y garantiza un ajuste perfecto en cada reparación.",
+        "stock": 10
     },
     {
         "id": 3,
         "name": "Llave inglesa ajustable",
         "price": 4200,
-        "material": "Acero al carbono"
+        "material": "Acero al carbono",
+        "description": "Una sola herramienta que reemplaza un set completo. Adapta la potencia a cualquier tamaño de tuerca y resuelve problemas al instante.",
+        "stock": 10
     },
     {
         "id": 4,
         "name": "Alicate universal",
         "price": 2800,
-        "material": "Acero templado"
+        "material": "Acero templado",
+        "description": "Tu mano derecha en el taller. Domina cualquier cable, alambre o material con un agarre firme y un corte limpio y seguro.",
+        "stock": 10
     },
     {
         "id": 5,
         "name": "Cinta métrica 5m",
         "price": 1500,
-        "material": "Plástico y metal"
+        "material": "Plástico y metal",
+        "description": "La base de toda obra maestra. Consigue mediciones exactas que garantizan que todo encaje a la perfección, sin margen de error.",
+        "stock": 10
     },
     {
         "id": 6,
         "name": "Taladro percutor",
         "price": 25000,
-        "material": "Plástico reforzado y acero"
+        "material": "Plástico reforzado y acero",
+        "description": "Libera una fuerza imparable. Perfora cualquier muro o superficie como mantequilla y ahorra tiempo en los trabajos más duros.",
+        "stock": 10
     },
     {
         "id": 7,
         "name": "Caja de tornillos surtidos",
         "price": 1800,
-        "material": "Acero galvanizado"
+        "material": "Acero galvanizado",
+        "description": "La solución completa para cualquier imprevisto. Siempre tendrás el fijador perfecto, listo para cualquier proyecto o emergencia.",
+        "stock": 10
     },
     {
         "id": 8,
         "name": "Serrucho manual",
         "price": 3200,
-        "material": "Acero y madera"
+        "material": "Acero y madera",
+        "description": "Cortes limpios y sin esfuerzo. Redefine la facilidad de cortar madera con una herramienta cómoda que responde a tu ritmo.",
+        "stock": 10
     },
     {
         "id": 9,
         "name": "Nivel de burbuja 30cm",
         "price": 2200,
-        "material": "Aluminio"
+        "material": "Aluminio",
+        "description": "Garantiza la perfección visual. Asegura que cada instalación y estantería quede perfectamente recta y profesional.",
+        "stock": 10
     },
     {
         "id": 10,
         "name": "Pinza de punta fina",
         "price": 2600,
-        "material": "Acero inoxidable"
+        "material": "Acero inoxidable",
+        "description": "El detalle marca la diferencia. Ejecuta trabajos delicados con la máxima precisión en espacios donde ninguna otra herramienta llega.",
+        "stock": 10
     }
 ]

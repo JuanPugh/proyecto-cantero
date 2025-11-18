@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Input from "../components/input";
 import Button from "../components/button";
 import { useNavigate, Link } from "react-router-dom";
 import Navbar from "../components/navbar";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { db } from "../firebase/config";
+import { useAuth } from "../components/AuthContext";
 
 function Login() {
 
-
+    const { LogIn } = useAuth();
 
 
     const [values, setValues] = useState({
@@ -27,10 +30,29 @@ function Login() {
 
     }
 
+
     const navigate = useNavigate();
 
     const handleSubmit = (e: any) => {
+
         e.preventDefault();
+
+        const usersRef = collection(db, "users");
+        const q = query(usersRef, where("email", "==", values.email), where("password", "==", values.password));
+
+        getDocs(q)
+            .then((resp) => {
+
+                if (resp.docs.length > 0) {
+                    LogIn();
+                    navigate("/");
+                } else {
+                    alert("No tienes una cuenta!")
+                }
+            });
+
+
+        /*
 
         if (values.email.trim() != "" && values.password.trim() != "") {
 
@@ -39,7 +61,7 @@ function Login() {
         } else {
             alert("Debe ingresar datos en todos los campos");
         }
-
+        */
     }
 
 

@@ -1,8 +1,17 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import Navbar from "../components/navbar";
 import ItemListContainer from "../components/ItemListContainer";
+import { useAuth } from "../components/AuthContext";
+
 
 function Products() {
+
+    const { isLoggedIn } = useAuth();
+
+    if (!isLoggedIn) {
+        return (<Navigate replace={true} to="/login" />)
+    }
+
 
     return (
         <div className="main-body">
