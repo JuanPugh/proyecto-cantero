@@ -1,11 +1,19 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from "react";
 
+export type User = {
+    name: string,
+    email: string,
+    password: string,
+    isAdmin: boolean
+}
+
+
 type AuthContextType = {
     isLoggedIn: boolean;
     LogIn: () => void;
     LogOut: () => void;
-    user: {};
-    setUser: (u: {}) => void;
+    user: User | null;
+    setUser: (u: User | null) => void;
 };
 
 const AuthContext = createContext<AuthContextType | null>(null);
@@ -27,7 +35,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         () => localStorage.getItem("logged_user") === "true"
     );
 
-    const [user, setUser] = useState({});
+    const [user, setUser] = useState<User|null>(null);
 
     useEffect(() => {
         localStorage.setItem("logged_user", String(isLoggedIn));

@@ -2,15 +2,19 @@ import { Navigate } from "react-router-dom";
 import Navbar from "../components/navbar";
 import ItemListContainer from "../components/ItemListContainer";
 import { useAuth } from "../components/AuthContext";
+import Button from "../components/button";
+import { useNavigate } from "react-router-dom";
 
 
 function Products() {
 
-    const { isLoggedIn } = useAuth();
+    const { isLoggedIn, user } = useAuth();
 
     if (!isLoggedIn) {
         return (<Navigate replace={true} to="/login" />)
     }
+
+    const navigate = useNavigate();
 
 
     return (
@@ -19,7 +23,17 @@ function Products() {
             <div className="center">
 
                 <div className="flex-vertical">
-                    <h1 style={{ paddingTop: "20px" }}>Productos</h1>
+
+                    <div className="flex-between">
+                        <h1 style={{ paddingTop: "20px" }}>Productos</h1>
+                        {
+                            user?.isAdmin && 
+                            <Button text="Añadir productos" className="rounded white-bg" onClick={() => {
+                                navigate("/products/add")
+                            }} />
+                            
+                        }
+                    </div>
                     <ItemListContainer />
                 </div>
 

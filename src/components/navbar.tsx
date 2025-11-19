@@ -7,7 +7,7 @@ import { useAuth } from "./AuthContext";
 export default function Navbar() {
 
 
-    const { isLoggedIn, LogOut } = useAuth();
+    const { isLoggedIn, LogOut, user } = useAuth();
     const navigate = useNavigate();
 
     return (
@@ -22,8 +22,12 @@ export default function Navbar() {
                     !isLoggedIn ? <>
                         <Button text="Iniciar sesion" className="rounded white-bg" onClick={() => navigate("/login")} />
                         <Button text="Registrarse" className="rounded white-bg" onClick={() => navigate("/register")} />
-                    </> :
-                        <Button text="Cerrar sesion" className="rounded white-bg" onClick={LogOut} />
+                        </> 
+                    :
+                        <>
+                            <Button text="Cerrar sesion" className="rounded white-bg" onClick={LogOut} />
+                            <p>{user?.name}</p>
+                        </>
                 }
 
 

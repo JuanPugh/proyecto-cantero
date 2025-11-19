@@ -12,7 +12,7 @@ function Home() {
 
 
     return (
-        <div className="main-body">
+        <div className="main-body home">
             <Navbar />
 
             <div className="center">

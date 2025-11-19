@@ -5,11 +5,12 @@ import { useNavigate, Link } from "react-router-dom";
 import Navbar from "../components/navbar";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../firebase/config";
-import { useAuth } from "../components/AuthContext";
+import { useAuth, User } from "../components/AuthContext";
+
 
 function Login() {
 
-    const { LogIn } = useAuth();
+    const { LogIn, setUser } = useAuth();
 
 
     const [values, setValues] = useState({
@@ -44,6 +45,9 @@ function Login() {
             .then((resp) => {
 
                 if (resp.docs.length > 0) {
+                    
+                    const userData = resp.docs[0].data(); 
+                    setUser(userData as User);
                     LogIn();
                     navigate("/");
                 } else {
@@ -51,17 +55,6 @@ function Login() {
                 }
             });
 
-
-        /*
-
-        if (values.email.trim() != "" && values.password.trim() != "") {
-
-            console.log("Datos enviados: ", values);
-            navigate("/", { state: { values } });
-        } else {
-            alert("Debe ingresar datos en todos los campos");
-        }
-        */
     }
 
 

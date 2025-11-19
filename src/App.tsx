@@ -5,9 +5,9 @@ import './App.css';
 import Register from './views/register';
 import Login from './views/login';
 import Home from './views/home';
+import AddItems from './views/addItems';
 import Products from './views/products';
 import { AuthProvider, useAuth } from './components/AuthContext';
-import { useContext } from 'react';
 
 function App() {
 
@@ -25,6 +25,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/products" element={<Products />} />
+          <Route path="/products/add" element= {<AddItems/>} />
 
 
         </Routes>

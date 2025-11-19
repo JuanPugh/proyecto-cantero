@@ -1,20 +1,20 @@
 import React, { useState } from "react";
 import Input from "../components/input";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link, Navigate } from "react-router-dom";
 import Button from "../components/button";
 import Navbar from "../components/navbar";
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "../firebase/config";
+import { useAuth, User } from "../components/AuthContext";
+
 
 function Register() {
 
-    // const days = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"];    
-    // const activities = ["Cocinar", "Despertar", "Entrenar", "Limpiar", "Darle de comer a los perros"];
-
-    const navigate = useNavigate();
+    const { setUser } = useAuth();
 
     const [values, setValues] = useState({
 
         name: "",
-        surname: "",
         email: "",
         password: ""
     })
@@ -33,14 +33,17 @@ function Register() {
     const handleSubmit = (e: any) => {
         e.preventDefault();
 
-        if (values.name.trim() != "" && values.surname.trim() != "" &&
-            values.email.trim() != "" && values.password.trim() != "") {
-
-            console.log("Datos enviados: ", values);
-            navigate("/");
-        } else {
-            alert("Debe ingresar datos en todos los campos");
+        const usersRef = collection(db, "users");
+        const userData = {
+            ...values,
         }
+
+
+        addDoc(usersRef, {...userData, isAdmin: false}).then((doc) => {
+            setUser(userData as User)
+        });
+
+        return (<Navigate replace={true} to="/login" />)
     }
 
     return (
@@ -54,7 +57,6 @@ function Register() {
                 <h1 className="title">Register</h1>
 
                 <Input name="Name" onChange={handleChange} type="text" />
-                <Input name="Surname" onChange={handleChange} type="text" />
                 <Input name="Email" onChange={handleChange} type="email" />
                 <Input name="Password" onChange={handleChange} type="password" />
 
